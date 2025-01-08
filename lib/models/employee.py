@@ -13,6 +13,7 @@ class Employee:
         self.name = name
         self.job_title = job_title
         self.department_id = department_id
+        
 
     def __repr__(self):
         return (
@@ -89,7 +90,7 @@ class Employee:
                 INSERT INTO employees (name, job_title, department_id)
                 VALUES (?, ?, ?)
         """
-
+        print(self)
         CURSOR.execute(sql, (self.name, self.job_title, self.department_id))
         CONN.commit()
 
